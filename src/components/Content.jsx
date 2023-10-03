@@ -1,11 +1,10 @@
-
-export default function Content({ CourseElement }) {
+export default function Content({ CourseElement, BannerAndDesc }) {
     return (
         <div className="main-container">
             <div className="container">
                 <div className="banner mb-30">
                     <div className="imgBox border-r">
-                        <img src={CourseElement.banner_img} alt="banner" />
+                        <img src={BannerAndDesc[0].banner_img} alt="banner" />
                     </div>
 
                 </div>
@@ -16,12 +15,16 @@ export default function Content({ CourseElement }) {
                         </div>
                         <div className="photo-grid">
                             <ul>
-                                <li>
-                                    <div className="imgBox border-r">
-                                        <img src="images/vegetable01.jpg" alt="Vegetables" />
-                                    </div>
-                                </li>
-                                <li>
+                                {CourseElement.map(course => (
+                                    <li key={course.id}>
+                                        <div className="imgBox border-r">
+                                            <img src={course.course_img} alt={course.course_title} />
+                                        </div>
+                                    </li>
+
+                                ))}
+
+                                {/* <li>
                                     <div className="imgBox border-r">
                                         <img src="images/vegetable02.jpg" alt="Vegetables" />
                                     </div>
@@ -30,7 +33,7 @@ export default function Content({ CourseElement }) {
                                     <div className="imgBox border-r">
                                         <img src="images/vegetable03.jpg" alt="Vegetables" />
                                     </div>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>
@@ -39,9 +42,12 @@ export default function Content({ CourseElement }) {
                             Contact
                         </div>
                         <div className="card">
-                            <p>For any questions or suggestions about Vegetables, Vegetables Club or your
+                            {/* <p>For any questions or suggestions about Vegetables, Vegetables Club or your
                                 online order you can contact Vegetables Customer Service by phone, email
-                                or post and we’ll be happy to help.</p>
+                                or post and we’ll be happy to help.</p> */}
+                            <p>
+                                {BannerAndDesc[0].description}
+                            </p>
                             <hr />
                             <p className="lineH-2">E-mail : Vegetables@aaabbccc.com<br />
                                 PHONE : +886-123-456-789</p>

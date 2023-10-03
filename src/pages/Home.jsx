@@ -1,14 +1,14 @@
 import Header from "../components/Header"
 import Footer from "../components/Footer";
 import Content from "../components/Content";
-import SuggestedItem from "../components/SuggestedItem";
 import CourseElement from "../json/CourseElement.json";
+import BannerAndDesc from "../json/BannerAndDesc.json";
 
 function Home() {
     return (
         <div>
             <Header />
-            <Content CourseElement={CourseElement} />
+            <Content CourseElement={CourseElement} BannerAndDesc={BannerAndDesc} />
             {/* <div className="main-container">
                 <div className="container">
                     <div className="banner mb-30">
