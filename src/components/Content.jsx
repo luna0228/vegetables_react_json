@@ -1,10 +1,10 @@
-export default function Content({ CourseElement, BannerAndDesc }) {
+export default function Content({ CourseElements }) {
     return (
         <div className="main-container">
             <div className="container">
                 <div className="banner mb-30">
                     <div className="imgBox border-r">
-                        <img src={BannerAndDesc[0].banner_img} alt="banner" />
+                        <img src={CourseElements[0].banner_img} alt="banner" />
                     </div>
 
                 </div>
@@ -15,7 +15,7 @@ export default function Content({ CourseElement, BannerAndDesc }) {
                         </div>
                         <div className="photo-grid">
                             <ul>
-                                {CourseElement.map(course => (
+                                {CourseElements[0].course_list.map(course => (
                                     <li key={course.id}>
                                         <div className="imgBox border-r">
                                             <img src={course.course_img} alt={course.course_title} />
@@ -46,7 +46,7 @@ export default function Content({ CourseElement, BannerAndDesc }) {
                                 online order you can contact Vegetables Customer Service by phone, email
                                 or post and we’ll be happy to help.</p> */}
                             <p>
-                                {BannerAndDesc[0].description}
+                                {CourseElements[0].description}
                             </p>
                             <hr />
                             <p className="lineH-2">E-mail : Vegetables@aaabbccc.com<br />
